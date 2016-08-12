@@ -1,0 +1,176 @@
+@import "basechence";
+@include userem(640px);
+*{
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  font-family: "Microsoft YaHei";
+  position: relative;
+}
+a{
+  text-decoration: none;
+}
+
+.card{
+  background: #fff;
+  margin: 1.3rem 0 0.8rem 0;
+  position: relative;
+  box-shadow: 0 0.04rem 0.08rem 0 rgba(0, 0, 0, 0.2),
+  0 0.5rem 0.5rem 0 rgba(0, 0, 0, 0.1);
+  .header{
+    h1{
+      position: absolute;
+      top: -1.5rem;
+      width: 100%;
+      font-size: 1.6rem;
+      font-weight: 100;
+      text-align: center;
+      //color: rgba(175, 47, 47, 0.15);
+      color: #bce7ff;
+    }
+    input{
+      position: relative;
+      margin: 0;
+      width: 100%;
+      font-size: 0.3rem;
+      font-family: inherit;
+      font-weight: inherit;
+      line-height: 1.4em;
+      outline: none;
+      color: inherit;
+      border: 1px solid #999;
+      box-sizing: border-box;
+      padding: 16px 16px 16px 60px;
+     /* border: none;*/
+      background: rgba(0, 0, 0, 0.003);
+      box-shadow: inset 0 -2px 1px rgba(0,0,0,0.03);
+    }
+  }
+  .todos{
+    overflow: hidden;
+      .todo{
+        width: 100%;
+        height: 0.8rem;
+        font-size: 0.16rem;
+        border-bottom: 1px solid #ededed;
+        transition: all .8s ease;
+        overflow: hidden;
+        .check{
+          width: 0.8rem;
+          height: 100%;
+          float: left;
+          background: url(../images/8572479_165534361000_2_03.png)no-repeat;
+          background-size: 100%;
+          //border: 1px solid #000;
+          //border: none;
+        }
+        input{
+          display: block;
+          width: 80%;
+          height: 0.78rem;
+          margin-left: 0.8rem;
+          outline: none;
+          border: 1px solid #333;
+          box-sizing: border-box;
+          padding-left: 0.4rem;
+          display: none;
+          font-size: 0.24rem;
+        }
+        p{
+          width: 70%;
+          float: left;
+          font-size: 0.24rem;
+          line-height: 0.8rem;
+          padding-left: 0.4rem;
+        }
+        .del{
+          width: 0.4rem;
+          height: 60%;
+          background: url(../images/27S58PICv3X.jpg) no-repeat;
+          background-size: 100%;
+          position: absolute;
+          top: 0;
+          bottom:0;
+          right:0.2rem;
+          margin: auto;
+        }
+      }
+    .todo.ng-enter{
+      height: 0;
+    }
+    .todo.ng-enter-active{
+      height: 0.8rem;
+    }
+    .todo.ng-leave{
+      height: 0.8rem;
+    }
+    .todo.ng-leave-active{
+      height: 0;
+    }
+  }
+  .todo.wancheng{
+    .check{
+      background: url(../images/8572479_165534361000_2_05.png) no-repeat;
+      background-size: 100%;
+    }
+    p{
+      color: #ccc;
+      text-decoration: line-through;
+    }
+  }
+  .todo.edit{
+    .check,p,.del{
+      display: none;
+    }
+    input{
+      display: block;
+    }
+  }
+  .footer{
+    width: 100%;
+    height: 2rem;
+    line-height: 0.5rem;
+    margin-top: 0.4rem;
+    color: orange;
+    .left{
+      height: 0.5rem;
+      text-align: center;
+      width: 0.4rem;
+      float: left;
+      font-size: 0.14rem;
+      border-radius: 0.1rem;
+      border: 1px solid #333;
+      color: orange;
+      background: url(../images/12024882_092144612000_2_03.png)no-repeat center center;
+      background-size: cover;
+    }
+    .right{
+      height: 0.5rem;
+      text-align: center;
+      width: 1.6rem;
+      float: right;
+      border-radius: 0.1rem;
+      border: 1px solid #333;
+      font-size: 0.14rem;
+      background: url(../images/12024882_092144612000_2_03.png)no-repeat center center;
+      background-size: 100%;
+    }
+    span{
+      width: 1.2rem;
+      height: 0.5rem;
+      border-radius: 0.1rem;
+      font-size: 0.14rem;
+      border: 1px solid #333;
+      text-align: center;
+      float: left;
+      margin: 0 0.1rem;
+      background: url(../images/12024882_092144612000_2_03.png)no-repeat;
+      background-size: 100%;
+    }
+    .red{
+      background: url(../images/12024882_092144612000_2_09.png)no-repeat center center;
+      background-size: 100%;
+      color: #98eaff;
+    }
+  }
+}

@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en" ng-app="todo">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=414px">
+    <script src="js/angular.js"></script>
+    <script src="js/angular-animate.js"></script>
+    <script src="js/jquery-1.11.3.js"></script>
+    <!--<script src="js/function.js"></script>-->
+    <script src="js/todos.js"></script>
+    <link rel="stylesheet" href="css/todos.css">
+    <title>Document</title>
+</head>
+<body  ng-controller="m">
+    <div class="card">
+        <div class="header">
+            <h1>todos</h1>
+            <!--<p>{{title}}</p>-->
+            <input type="text" id="new-todo" placeholder="what need to be done?" ng-model="name" ng-keyup="add($event);save()">
+
+        </div>
+        <ul class="todos" ng-init="tiaojian=''">
+            <li class="todo" ng-click="aa=true;focus($event)" ng-repeat="v in todos | filter:{isDone:tiaojian} track by v.id"  ng-class="{edit:aa,wancheng:v.isDone}" ng-init="aa=false" >
+                <div class="check" ng-click="v.isDone=!v.isDone;save()"></div>
+                <p >{{v.name}}</p>
+                <input type="text" value="v.name" ng-blur="aa=false" ng-model="v.name" ng-change="save()">
+                <!--<div class="del" ng-click="delete($index);save()"></div>-->
+                <div class="del" ng-click="delete(v.id);save()"></div>
+            </li>
+        </ul>
+        <div class="footer">
+            <div class="left" ng-bind="(todos | filter:{isDone:tiaojian}).length"></div>
+            <div class="right" ng-click="clear();save()">clear completed</div>
+            <span ng-class="{red:(tiaojian==='')}" ng-click="tiaojian=''">All</span>
+            <span ng-class="{red:(tiaojian===true)}" ng-click="tiaojian=true">Completed</span>
+            <span ng-class="{red:(tiaojian===false)}" ng-click="tiaojian=false">Active</span>
+        </div>
+    </div>
+</body>
+</html>
