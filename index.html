@@ -20,9 +20,9 @@
 
         </div>
         <ul class="todos" ng-init="tiaojian=''">
-            <li class="todo" ng-click="aa=true;focus($event)" ng-repeat="v in todos | filter:{isDone:tiaojian} track by v.id"  ng-class="{edit:aa,wancheng:v.isDone}" ng-init="aa=false" >
+            <li class="todo"  ng-repeat="v in todos | filter:{isDone:tiaojian} track by v.id"  ng-class="{edit:aa,wancheng:v.isDone}" ng-init="aa=false" >
                 <div class="check" ng-click="v.isDone=!v.isDone;save()"></div>
-                <p >{{v.name}}</p>
+                <p ng-click="aa=true;focus($event)">{{v.name}}</p>
                 <input type="text" value="v.name" ng-blur="aa=false" ng-model="v.name" ng-change="save()">
                 <!--<div class="del" ng-click="delete($index);save()"></div>-->
                 <div class="del" ng-click="delete(v.id);save()"></div>

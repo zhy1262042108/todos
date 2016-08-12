@@ -60,7 +60,10 @@ todo.controller('m',['$scope','$timeout',function ($scope,$timeout) {
        }
        $scope.todos=arr;
    }
-
+   $scope.stop=function (e) {
+       // e.preventDefault();
+       e.stopPropagation();
+   }
     /*加时间*/
     $scope.title='';
     setInterval(function () {
